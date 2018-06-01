@@ -8,32 +8,24 @@ import java.util.List;
 
 public class GenrenciaDeCondominio {
 
-    private List<Apartamento> apartamentos;
-    private List<Despesa> despesasFixas;
-    private List<Despesa> despesasEspecificas;
+    private List<Despesa> despesas;
 
-    public GenrenciaDeCondominio(List<Despesa> despesasFixas, List<Despesa> despesasEspecificas) {
-        this.despesasFixas = despesasFixas;
-        this.despesasEspecificas = despesasEspecificas;
+    public GenrenciaDeCondominio(List<Despesa> despesas) {
+        this.despesas = despesas;
     }
 
-    public void lancarDespesasFixas(Despesa despesa) {
-        despesasFixas.add(despesa);
-    }
-
-    public void lancarDespesasEspecificas(Despesa despesa) {
-        despesasEspecificas.add(despesa);
+    public void lancarDespesas(Despesa despesa) {
+        despesas.add(despesa);
     }
 
     public void calcularCondominio(String mesAno) {
 
-        for (Despesa despesa : despesasFixas) {
+        for (Despesa despesa : despesas) {
             for (Apartamento apt : despesa.getApartamentos()) {
                 Condominio condominio = apt.novoCondominio(mesAno);
                 condominio.adicionarDespesa(despesa);
             }
         }
-
     }
 
 }
