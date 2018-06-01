@@ -9,7 +9,7 @@ public class ItemCondominio {
     public ItemCondominio(String referencia, Despesa despesa, Apartamento apartamento) {
         this.referencia = referencia;
         this.despesa = despesa;
-        calacularValor(despesa, apartamento.getQtdQuartos());
+        calacularValor(apartamento.getQtdQuartos());
     }
 
     @Override
@@ -17,26 +17,21 @@ public class ItemCondominio {
         return despesa.getNome() +" --- "+ this.valor;
     }
 
-    public String getReferencia() {
-        return referencia;
-    }
-
     public double getValor() {
         return valor;
     }
 
-    private void calacularValor(Despesa despesa, int qtdQuartos) {
-        int qtdTotalQuartos = 0;
-        for (Apartamento apt : despesa.getApartamentos()) {
-            qtdTotalQuartos += apt.getQtdQuartos();
-        }
+    private void calacularValor(int qtdQuartos) {
 
         if (despesa.isValorRateado()) {
+            int qtdTotalQuartos = 0;
+            for (Apartamento apt : despesa.getApartamentos()) {
+                qtdTotalQuartos += apt.getQtdQuartos();
+            }
             this.valor = despesa.getValor() / qtdTotalQuartos * qtdQuartos;
         } else {
             this.valor = despesa.getValor() / despesa.getApartamentos().size();
         }
-
     }
 
 }
