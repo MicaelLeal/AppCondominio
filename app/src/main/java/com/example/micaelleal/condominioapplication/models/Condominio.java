@@ -17,8 +17,8 @@ public class Condominio {
         this.apartamento = apartamento;
     }
 
-    public void adicionarDespesa(Despesa despesa, String referencia) {
-        itens.add(new ItemCondominio(referencia, despesa, apartamento));
+    public void adicionarDespesa(Despesa despesa) {
+        itens.add(new ItemCondominio(mesAno, despesa, apartamento));
     }
 
     public String getMesAno() {
