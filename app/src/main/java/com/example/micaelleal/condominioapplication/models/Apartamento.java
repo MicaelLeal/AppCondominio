@@ -19,12 +19,15 @@ public class Apartamento {
     }
 
     public Condominio novoCondominio(String mesAno) {
-        Condominio condominio = condominios.get(condominios.size() -1);
-
-        if (!condominio.getMesAno().equals(mesAno)) {
-            condominio = new Condominio(mesAno, this);
-            condominios.add(condominio);
+        Condominio condominio;
+        if (!condominios.isEmpty()) {
+            condominio = condominios.get(condominios.size() -1);
+            if (condominio.getMesAno().equals(mesAno)) {
+                return condominio;
+            }
         }
+        condominio = new Condominio(mesAno, this);
+        condominios.add(condominio);
         return condominio;
     }
 
