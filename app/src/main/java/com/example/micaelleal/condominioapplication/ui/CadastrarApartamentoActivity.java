@@ -1,7 +1,9 @@
-package com.example.micaelleal.condominioapplication;
+package com.example.micaelleal.condominioapplication.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.micaelleal.condominioapplication.R;
 
 public class CadastrarApartamentoActivity extends AppCompatActivity {
 

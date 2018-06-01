@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LancarDespesasActivity">
+    android:orientation="vertical"
+    tools:context=".ui.LancarDespesasActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/nome_despesa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"/>
+
+    <EditText
+        android:id="@+id/valor_despesa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor"/>
+
+
+
+    <RadioGroup
+        android:id="@+id/rati_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ratificado:"/>
+
+
+        <RadioButton
+            android:id="@+id/rati_sim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sim"/>
+
+
+        <RadioButton
+            android:id="@+id/rati_nao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Não"/>
+
+    </RadioGroup>
+
+
+    <Button
+        android:onClick="calcularDespesa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar"/>
+
+</LinearLayout>
