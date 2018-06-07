@@ -12,7 +12,7 @@ import com.example.micaelleal.condominioapplication.models.Proprietario;
 
 import io.objectbox.Box;
 
-public class CadastrarProprietario extends AppCompatActivity {
+public class CadastrarProprietarioAgoraVai extends AppCompatActivity {
 
     private EditText nome;
     private EditText telefone;
@@ -21,7 +21,7 @@ public class CadastrarProprietario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastra_proprietario);
+        setContentView(R.layout.activity_cadastrar_proprietario_agora_vai);
 
         nome = findViewById(R.id.nome_proprietario);
         telefone = findViewById(R.id.telefone_proprietario);

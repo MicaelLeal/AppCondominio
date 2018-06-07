@@ -7,6 +7,12 @@
     tools:context=".ui.MainActivity">
 
     <Button
+        android:onClick="ChamaCadastroProprietario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar Proprietario"/>
+
+    <Button
         android:onClick="cadastrarApartamento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
